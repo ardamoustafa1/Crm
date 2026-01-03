@@ -241,14 +241,14 @@ export const SupervisorDashboard: React.FC = () => {
                         <ResponsiveContainer width="100%" height="100%">
                             <PieChart>
                                 <Pie
-                                    data={mockSentimentDistribution}
+                                    data={mockSentimentDistribution as any}
                                     cx="50%"
                                     cy="50%"
                                     innerRadius={50}
                                     outerRadius={80}
                                     dataKey="count"
                                     nameKey="sentiment"
-                                    label={({ sentiment, percentage }) => `${percentage}%`}
+                                    label={({ payload }: any) => `${payload?.percentage || 0}%`}
                                     labelLine={false}
                                 >
                                     {mockSentimentDistribution.map((entry) => (

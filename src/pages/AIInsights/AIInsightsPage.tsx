@@ -206,7 +206,7 @@ export const AIInsightsPage: React.FC = () => {
                                         border: '1px solid #27272a',
                                         borderRadius: '8px'
                                     }}
-                                    formatter={(value: number) => [`${value}%`, 'Çözüm Oranı']}
+                                    formatter={(value) => [`${value}%`, 'Çözüm Oranı']}
                                 />
                                 <Area
                                     type="monotone"
@@ -232,7 +232,7 @@ export const AIInsightsPage: React.FC = () => {
                         <ResponsiveContainer width="100%" height={200}>
                             <PieChart>
                                 <Pie
-                                    data={mockIntentDistribution}
+                                    data={mockIntentDistribution as any}
                                     cx="50%"
                                     cy="50%"
                                     innerRadius={50}
